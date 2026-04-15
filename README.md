@@ -2,9 +2,11 @@
 
 > **A beautifully designed, fully-integrated AI video playground.** Built with Next.js, this open-source template serves as a complete, self-contained SaaS boilerplate for generating, editing, and managing high-quality AI videos fueled by the Seedance v2.0 engine.
 
-## 🌐 Try the Live Engine
+## 🌐 Live Manifestation
 
-Experience the full glassmorphic, responsive interface. Sign in with Google to explore the Generation Studio, Edit Mode, and Credit Tiers directly from your browser.
+[**Experience the Seedance engine live here**](https://seedance-2-generator.vercel.app/)
+
+Sign in with Google to explore the Generation Studio, Edit Mode, and Credit Tiers directly from your browser. Our glassmorphic, high-fidelity interface is fully responsive and production-ready.
 
 ---
 
@@ -66,7 +68,7 @@ Ready to iterate locally? Setup is straightforward.
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/SamurAIGPT/seedance-v2-generator
+git clone https://github.com/SamurAIGPT/seedance-2-generator
 cd seedance-v2-generator
 
 # 2. Install dependencies
