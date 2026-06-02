@@ -2,6 +2,13 @@
 
 > **A beautifully designed, fully-integrated AI video playground.** Built with Next.js, this open-source template serves as a complete, self-contained SaaS boilerplate for generating, editing, and managing high-quality AI videos fueled by the Seedance v2.0 engine.
 
+## Related Projects
+
+- [Seedance-2.0-API](https://github.com/Anil-matcha/Seedance-2.0-API) — Python wrapper for the Seedance 2.0 API — use the model directly in scripts
+- [seedance2-comfyui](https://github.com/Anil-matcha/seedance2-comfyui) — Run Seedance 2 inside ComfyUI
+- [n8n-nodes-seedance2](https://github.com/Anil-matcha/n8n-nodes-seedance2) — Automate Seedance 2 generation in n8n workflows
+- [seedance-2.0-watermark-remover](https://github.com/SamurAIGPT/seedance-2.0-watermark-remover) — Remove watermarks from Seedance 2 generated videos
+
 ## 🌐 Live Manifestation
 
 [**Experience the Seedance engine live here**](https://seedance-2-generator.vercel.app/)
