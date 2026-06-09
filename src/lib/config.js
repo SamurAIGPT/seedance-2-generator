@@ -4,6 +4,7 @@
  */
 
 const config = {
+  appName: "Seedance V2 Template",
   auth: {
     google: {
       clientId: process.env.GOOGLE_CLIENT_ID,
