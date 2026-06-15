@@ -1,6 +1,6 @@
-# 🚀 Seedance v2.0 Generator — High-Octane AI Video Workspace
+# 🚀 Seedance 2 Generator — Seedance 2.0 & Seedance 2 Mini AI Video Workspace
 
-> **A beautifully designed, fully-integrated AI video playground.** Built with Next.js, this open-source template serves as a complete, self-contained SaaS boilerplate for generating, editing, and managing high-quality AI videos fueled by the Seedance v2.0 engine.
+> **A beautifully designed, fully-integrated AI video playground.** Built with Next.js, this open-source template serves as a complete, self-contained SaaS boilerplate for generating, editing, and managing high-quality AI videos fueled by Seedance 2.0 and the new **Seedance 2 Mini** engine — ByteDance's fast, affordable model at ~$0.073/sec.
 
 <p align="center">
   <a href="https://github.com/Anil-matcha/awesome-generative-ai-apps">
@@ -12,7 +12,7 @@
 
 ## Related Projects
 
-- [Seedance-2.0-API](https://github.com/Anil-matcha/Seedance-2.0-API) — Python wrapper for the Seedance 2.0 API — use the model directly in scripts
+- [Seedance-2-API](https://github.com/Anil-matcha/Seedance-2-API) — Python wrapper for Seedance 2.0 and Seedance 2 Mini — use the models directly in scripts
 - [seedance2-comfyui](https://github.com/Anil-matcha/seedance2-comfyui) — Run Seedance 2 inside ComfyUI
 - [n8n-nodes-seedance2](https://github.com/Anil-matcha/n8n-nodes-seedance2) — Automate Seedance 2 generation in n8n workflows
 - [seedance-2.0-watermark-remover](https://github.com/SamurAIGPT/seedance-2.0-watermark-remover) — Remove watermarks from Seedance 2 generated videos
@@ -27,9 +27,10 @@ Sign in with Google to explore the Generation Studio, Edit Mode, and Credit Tier
 
 Seedance v2.0 Generator is not just another wrapper — it's a production-ready, highly-optimized AI web application. Out of the box, it seamlessly manages User Authentication, Credits & Billing, Image Persistence, and asynchronous AI video generation polling using a sleek Next.js (App Router) architecture. It empowers you to build professional-grade AI workflows with built-in mobile optimization, making it the perfect starting point for your next AI SaaS.
 
-**Why use Seedance v2.0 Generator?**
+**Why use Seedance 2 Generator?**
 
 - **Production-Ready SaaS** — Complete with Google OAuth and Stripe Checkout workflows built-in.
+- **Seedance 2.0 & Seedance 2 Mini** — Supports both models. Use Seedance 2.0 for maximum quality, or route to **Seedance 2 Mini** for fast generation at ~$0.073/sec — great for keeping credit costs low.
 - **Advanced Video Studio** — Seamlessly toggle between prompt-based Text-to-Video generation and Multi-Image Reference editing.
 - **Historical Archive** — All creations are securely persisted to a PostgreSQL database for a customized user gallery.
 - **Minimalist UX** — Custom dropdowns, high-fidelity micro-animations, and complete mobile-stacked responsiveness.
