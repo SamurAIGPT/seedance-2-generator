@@ -22,6 +22,7 @@
 
 | Model | Image-to-Video | Text-to-Video |
 |-------|---------------|---------------|
+| Seedance 2 | [Playground](https://muapi.ai/playground/seedance-v2.0-i2v?utm_source=github&utm_medium=readme&utm_campaign=seedance-2-generator) | [Playground](https://muapi.ai/playground/seedance-v2.0-t2v?utm_source=github&utm_medium=readme&utm_campaign=seedance-2-generator) |
 | Seedance 2 Mini | [Playground](https://muapi.ai/playground/seedance-2-mini-image-to-video?utm_source=github&utm_medium=readme&utm_campaign=seedance-2-generator) | [Playground](https://muapi.ai/playground/seedance-2-mini-text-to-video?utm_source=github&utm_medium=readme&utm_campaign=seedance-2-generator) |
 | Seedance 2.1 *(coming soon)* | [Playground](https://muapi.ai/playground/seedance-2.1-image-to-video?utm_source=github&utm_medium=readme&utm_campaign=seedance-2-generator) | [Playground](https://muapi.ai/playground/seedance-2.1-text-to-video?utm_source=github&utm_medium=readme&utm_campaign=seedance-2-generator) |
 | Seedance 2.5 *(coming soon)* | [Playground](https://muapi.ai/playground/seedance-2.5-image-to-video?utm_source=github&utm_medium=readme&utm_campaign=seedance-2-generator) | [Playground](https://muapi.ai/playground/seedance-2.5-text-to-video?utm_source=github&utm_medium=readme&utm_campaign=seedance-2-generator) |
