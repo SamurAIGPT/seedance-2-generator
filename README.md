@@ -22,7 +22,7 @@
 
 | Model | Image-to-Video | Text-to-Video |
 |-------|---------------|---------------|
-| Seedance 2.0 Mini *(coming soon)* | [Playground](https://muapi.ai/playground/seedance-2.0-mini-image-to-video?utm_source=github&utm_medium=readme&utm_campaign=seedance-2-generator) | [Playground](https://muapi.ai/playground/seedance-2.0-mini-text-to-video?utm_source=github&utm_medium=readme&utm_campaign=seedance-2-generator) |
+| Seedance 2 Mini | [Playground](https://muapi.ai/playground/seedance-2-mini-image-to-video?utm_source=github&utm_medium=readme&utm_campaign=seedance-2-generator) | [Playground](https://muapi.ai/playground/seedance-2-mini-text-to-video?utm_source=github&utm_medium=readme&utm_campaign=seedance-2-generator) |
 | Seedance 2.1 *(coming soon)* | [Playground](https://muapi.ai/playground/seedance-2.1-image-to-video?utm_source=github&utm_medium=readme&utm_campaign=seedance-2-generator) | [Playground](https://muapi.ai/playground/seedance-2.1-text-to-video?utm_source=github&utm_medium=readme&utm_campaign=seedance-2-generator) |
 | Seedance 2.5 *(coming soon)* | [Playground](https://muapi.ai/playground/seedance-2.5-image-to-video?utm_source=github&utm_medium=readme&utm_campaign=seedance-2-generator) | [Playground](https://muapi.ai/playground/seedance-2.5-text-to-video?utm_source=github&utm_medium=readme&utm_campaign=seedance-2-generator) |
 
@@ -45,7 +45,7 @@ Seedance v2.0 Generator is not just another wrapper — it's a production-ready,
 - **Minimalist UX** — Custom dropdowns, high-fidelity micro-animations, and complete mobile-stacked responsiveness.
 - **Extensible API** — Easily swap out the underlying AI engine without breaking the application UI.
 
-![Seedance v2.0 Generator](https://cdn.muapi.ai/outputs/4cd1f49d48934d448e7f493f9d5e476e.png)
+![Seedance v2.0 Generator](https://cdn.muapi.ai/outputs/generated/987459f2d06e4baeb4f62e3f5a8941e5.jpg)
 
 ## ✨ Core Features
 
