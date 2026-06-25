@@ -43,6 +43,23 @@ const config = {
           "720p": "https://api.muapi.ai/api/v1/seedance-2.0-omni-reference"
         }
       }
+    },
+    seedanceMini: {
+      apiKey: process.env.SEEDANCE_V2_API_KEY,
+      endpoints: {
+        t2v: {
+          "480p": "https://api.muapi.ai/api/v1/seedance-2-mini-text-to-video",
+          "720p": "https://api.muapi.ai/api/v1/seedance-2-mini-text-to-video"
+        },
+        i2v: {
+          "480p": "https://api.muapi.ai/api/v1/seedance-2-mini-image-to-video",
+          "720p": "https://api.muapi.ai/api/v1/seedance-2-mini-image-to-video"
+        },
+        reference: {
+          "480p": "https://api.muapi.ai/api/v1/seedance-2-mini-omni-reference",
+          "720p": "https://api.muapi.ai/api/v1/seedance-2-mini-omni-reference"
+        }
+      }
     }
   },
   db: {
