@@ -102,7 +102,7 @@ export const AIService = {
           quality,
           videoFiles: video_files,
           audioFiles: audio_files,
-          inputImages: images_list,
+          inputImages: images_list && images_list.length > 0 ? JSON.stringify(images_list) : null,
           requestId: request_id,
           status: "processing",
         }

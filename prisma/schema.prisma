@@ -60,7 +60,7 @@ model Creation {
   quality     String?
   audioFiles  String[]
   videoFiles  String[]
-  inputImages String[]
+  inputImages String?  @db.Text
   user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 

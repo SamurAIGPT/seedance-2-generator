@@ -18,7 +18,25 @@ export async function GET() {
       orderBy: { createdAt: "desc" },
     });
 
-    return NextResponse.json(creations);
+    const parsedCreations = creations.map(c => {
+      let imagesList = [];
+      if (c.inputImages) {
+        try {
+          imagesList = JSON.parse(c.inputImages);
+          if (!Array.isArray(imagesList)) {
+            imagesList = [c.inputImages];
+          }
+        } catch (e) {
+          imagesList = c.inputImages.split(",").map(url => url.trim()).filter(Boolean);
+        }
+      }
+      return {
+        ...c,
+        inputImages: imagesList
+      };
+    });
+
+    return NextResponse.json(parsedCreations);
   } catch (error) {
     console.error("Fetch creations error:", error);
     return NextResponse.json({ error: "Failed to fetch creations" }, { status: 500 });
