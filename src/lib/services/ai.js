@@ -143,6 +143,56 @@ export const AIService = {
       throw new Error(creation.error || "Generation failed.");
     }
 
+    // Upstream fallback poll
+    const apiKey = config.ai.seedance.apiKey;
+    if (!apiKey) return { status: "processing" };
+
+    try {
+      const res = await fetch(`https://api.muapi.ai/api/v1/predictions/${requestId}/result`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "x-api-key": apiKey,
+        }
+      });
+
+      if (res.ok) {
+        const result = await res.json();
+        const checkStatus = result.status || result.state;
+        if (checkStatus === "completed" || checkStatus === "succeeded") {
+          const outputs = result.outputs || [];
+          const outputUrl = outputs[0] || (typeof result.output === 'string' ? result.output : result.output?.urls?.get);
+
+          if (outputUrl) {
+            const updated = await creationModel.update({
+              where: { id: creation.id },
+              data: {
+                status: "completed",
+                imageUrl: outputUrl,
+              }
+            });
+            return { status: "completed", imageUrl: updated.imageUrl };
+          }
+        } else if (checkStatus === "failed") {
+          const errorMsg = result.error || "Generation failed";
+          await creationModel.update({
+            where: { id: creation.id },
+            data: {
+              status: "failed",
+              error: errorMsg,
+            }
+          });
+
+          // Refund credits
+          const cost = this.getCreditCost(creation.mode, creation.duration || 5, creation.quality || "basic", creation.resolution || "720p");
+          await UserService.addCredits(userId, cost);
+          throw new Error(errorMsg);
+        }
+      }
+    } catch (e) {
+      console.error("Polling error in checkStatus:", e);
+    }
+
     return { status: "processing" };
   }
 };
