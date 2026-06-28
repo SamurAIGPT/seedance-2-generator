@@ -12,7 +12,7 @@ export async function POST(req) {
     }
 
     const body = await req.json();
-    const { mode, prompt, aspect_ratio, resolution, duration, quality, model, images_list } = body;
+    const { mode, prompt, aspect_ratio, resolution, duration, quality, model, images_list = [], video_files = [], audio_files = [] } = body;
 
     if (!prompt && mode === 'text-to-video') {
       return NextResponse.json({ error: "Prompt is required" }, { status: 400 });
@@ -24,6 +24,8 @@ export async function POST(req) {
         mode,
         prompt,
         images_list,
+        video_files,
+        audio_files,
         aspect_ratio,
         resolution,
         duration,
@@ -39,7 +41,9 @@ export async function POST(req) {
         duration,
         quality,
         model,
-        images_list
+        images_list,
+        video_files,
+        audio_files
       });
     }
 
