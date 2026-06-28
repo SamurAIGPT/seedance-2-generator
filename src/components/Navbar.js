@@ -83,7 +83,7 @@ export default function Navbar() {
             rel="noopener noreferrer"
             className="flex items-center gap-2 rounded-full border border-divider px-4 py-1.5 text-xs font-bold text-secondary-text hover:text-primary-text hover:bg-bg-card transition-colors shadow-sm"
           >
-            <SiVercel className="text-xs text-white" />
+            <SiVercel className="text-xs text-current" />
             <span>Deploy</span>
           </a>
 
@@ -194,7 +194,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="flex w-full items-center justify-center gap-2 rounded-full border border-divider py-3 text-xs font-bold text-secondary-text hover:text-primary-text hover:bg-bg-card transition-all"
             >
-              <SiVercel className="text-xs text-white" />
+              <SiVercel className="text-xs text-current" />
               <span>Clone & Deploy Template</span>
             </a>
 

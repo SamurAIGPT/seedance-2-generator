@@ -51,7 +51,7 @@ export default function CreationsPage() {
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-          className="w-10 h-10 border-4 border-primary-500 border-t-transparent rounded-full drop-shadow-md"
+          className="w-10 h-10 border-4 border-primary border-t-transparent rounded-full drop-shadow-md"
         />
       </div>
     );
@@ -60,7 +60,7 @@ export default function CreationsPage() {
   return (
     <div className="flex-1 bg-transparent overflow-y-auto custom-scrollbar p-4 md:p-12">
       <header className="max-w-7xl mx-auto mb-10 space-y-3 pt-4 md:pt-0">
-        <div className="flex items-center gap-3 text-primary-500 mb-1">
+        <div className="flex items-center gap-3 text-primary mb-1">
           <FaCalendarAlt className="text-sm" />
           <span className="text-[10px] font-semibold uppercase tracking-[0.4em]">
             Historical Archive
@@ -86,7 +86,7 @@ export default function CreationsPage() {
               <h3 className="text-xl font-bold italic text-foreground">COLLECTION EMPTY</h3>
               <button
                 onClick={() => router.push("/")}
-                className="px-8 py-3 bg-primary-600 hover:bg-primary-500 text-white rounded-xl font-black text-[10px] uppercase tracking-widest transition-all shadow-xl shadow-primary-500/20"
+                className="px-8 py-3 bg-primary-hover hover:bg-primary text-white rounded-xl font-black text-[10px] uppercase tracking-widest transition-all shadow-xl shadow-primary/20"
               >
                 Start your first Manifestation
               </button>
@@ -122,7 +122,7 @@ export default function CreationsPage() {
                     </div>
                   ) : (
                     <div className="w-full h-full flex flex-col items-center justify-center bg-glass-hover gap-4">
-                      <div className="w-8 h-8 border-2 border-primary-500/30 border-t-primary-500 rounded-full animate-spin" />
+                      <div className="w-8 h-8 border-2 border-primary/30 border-t-primary rounded-full animate-spin" />
                       <span className="text-[9px] font-black text-muted uppercase tracking-[0.2em] animate-pulse">Manifesting...</span>
                     </div>
                   )}
@@ -131,7 +131,7 @@ export default function CreationsPage() {
                       {item.prompt}
                     </p>
                     <div className="flex items-center justify-between">
-                      <span className="text-[9px] font-semibold text-primary-400 uppercase tracking-widest">
+                      <span className="text-[9px] font-semibold text-primary uppercase tracking-widest">
                         {item.aspectRatio}
                       </span>
                       <div className="w-8 h-8 rounded-lg bg-glass-hover border border-glass-border flex items-center justify-center text-white">
@@ -186,9 +186,9 @@ export default function CreationsPage() {
                 ) : (
                   <div className="w-full h-full flex flex-col items-center justify-center bg-glass-hover gap-6">
                     <div className="relative">
-                      <div className="w-20 h-20 border-4 border-primary-500/10 border-t-primary-500 rounded-full animate-spin" />
+                      <div className="w-20 h-20 border-4 border-primary/10 border-t-primary rounded-full animate-spin" />
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <FaMagic className="text-primary-500/30 text-xl animate-pulse" />
+                        <FaMagic className="text-primary/30 text-xl animate-pulse" />
                       </div>
                     </div>
                     <div className="text-center space-y-2">
@@ -276,7 +276,7 @@ export default function CreationsPage() {
                           <div className="space-y-2">
                             {selectedImage.audioFiles.map((a, i) => (
                               <div key={i} className="flex items-center gap-2 p-2 rounded-md bg-glass-hover border border-glass-border">
-                                <FaMusic className="text-[10px] text-primary-500" />
+                                <FaMusic className="text-[10px] text-primary" />
                                 <span className="text-[10px] text-foreground truncate flex-1">{a.split('/').pop()}</span>
                                 <span className="text-[8px] text-muted font-bold">@audio{i+1}</span>
                               </div>
@@ -310,7 +310,7 @@ export default function CreationsPage() {
                       setDownloading(false);
                     }}
                     disabled={downloading || selectedImage.status !== "completed"}
-                    className="w-full py-3 bg-gradient-to-r from-primary-600 to-primary-500 text-white rounded-lg font-bold tracking-wider uppercase text-xs flex items-center justify-center gap-3 transition-all hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 shadow-xl shadow-primary-500/20 border border-primary-400/50"
+                    className="w-full py-3 bg-gradient-to-r from-primary-hover to-primary text-white rounded-lg font-bold tracking-wider uppercase text-xs flex items-center justify-center gap-3 transition-all hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 shadow-xl shadow-primary/20 border border-primary/50"
                   >
                     {downloading ? (
                       <div className="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin" />

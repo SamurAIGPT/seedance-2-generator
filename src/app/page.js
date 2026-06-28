@@ -67,7 +67,7 @@ function CustomSelect({ label, value, options, onChange, icon: Icon }) {
           className="w-full flex items-center justify-between px-3 py-2 bg-glass-bg border border-glass-border rounded-md text-xs font-medium text-foreground hover:bg-glass-hover transition-colors outline-none"
         >
           <div className="flex items-center gap-2">
-            {Icon && <Icon className="text-primary-500 text-[10px]" />}
+            {Icon && <Icon className="text-primary text-[10px]" />}
             {selectedOption.label}
           </div>
           <FaChevronDown
@@ -91,7 +91,7 @@ function CustomSelect({ label, value, options, onChange, icon: Icon }) {
                   }}
                   className={`w-full text-left px-3 py-2.5 text-xs transition-colors ${
                     value === option.value
-                      ? "bg-primary-500 text-white"
+                      ? "bg-primary text-white"
                       : "text-muted hover:bg-glass-hover hover:text-foreground"
                   }`}
                 >
@@ -361,7 +361,7 @@ export default function Home() {
         {/* Left: Controls */}
         <div className="bg-glass-bg border border-glass-border rounded-lg p-6 flex flex-col gap-6">
           <div className="flex items-center gap-4">
-            <div className="w-10 h-10 rounded-md bg-primary-500/10 flex items-center justify-center text-primary-500">
+            <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center text-primary">
               <FaMagic />
             </div>
             <div>
@@ -381,7 +381,7 @@ export default function Home() {
                   onClick={() => setMode(m.id)}
                   className={`py-2 rounded-md text-xs sm:text-sm font-medium transition-colors flex items-center justify-center gap-2 ${
                     mode === m.id
-                      ? "bg-primary-500 text-white shadow-sm"
+                      ? "bg-primary text-white shadow-sm"
                       : "text-muted hover:text-foreground"
                   }`}
                 >
@@ -406,7 +406,7 @@ export default function Home() {
                     ? "Use @image1, @video1, @audio1 to reference your files... \nExample: @video1 in the style of @image1 with @audio1"
                     : "Describe your video..."
                 }
-                className="w-full h-32 bg-glass-bg border border-glass-border rounded-md p-2 text-sm outline-none focus:border-primary-500/40 resize-none transition-colors custom-scrollbar"
+                className="w-full h-32 bg-glass-bg border border-glass-border rounded-md p-2 text-sm outline-none focus:border-primary/40 resize-none transition-colors custom-scrollbar"
               />
             </div>
 
@@ -421,7 +421,7 @@ export default function Home() {
                     value={newImageUrl}
                     onChange={(e) => setNewImageUrl(e.target.value)}
                     placeholder="Image URL..."
-                    className="flex-1 bg-glass-bg border border-glass-border rounded-md px-3 py-2 text-xs outline-none focus:border-primary-500/40"
+                    className="flex-1 bg-glass-bg border border-glass-border rounded-md px-3 py-2 text-xs outline-none focus:border-primary/40"
                   />
                   <input
                     type="file"
@@ -439,10 +439,10 @@ export default function Home() {
                       fileInputRef.current?.click();
                     }}
                     disabled={isUploading || imagesList.length >= 9}
-                    className="w-9 h-9 bg-primary-500/10 border border-primary-500/20 text-primary-500 rounded-md flex items-center justify-center hover:bg-primary-500 hover:text-white transition-colors"
+                    className="w-9 h-9 bg-primary/10 border border-primary/20 text-primary rounded-md flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
                   >
                     {isUploading ? (
-                      <div className="w-4 h-4 border-2 border-primary-500 border-t-transparent rounded-full animate-spin" />
+                      <div className="w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin" />
                     ) : (
                       <IoImageOutline />
                     )}
@@ -450,7 +450,7 @@ export default function Home() {
                   <button
                     onClick={addImageToList}
                     disabled={!newImageUrl || imagesList.length >= 9}
-                    className="w-9 h-9 bg-glass-bg border border-glass-border text-primary-500 rounded-md flex items-center justify-center hover:bg-primary-500 hover:text-white transition-colors"
+                    className="w-9 h-9 bg-glass-bg border border-glass-border text-primary rounded-md flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
                   >
                     <FaPlus />
                   </button>
@@ -494,7 +494,7 @@ export default function Home() {
                       value={newVideoUrl}
                       onChange={(e) => setNewVideoUrl(e.target.value)}
                       placeholder="Video URL..."
-                      className="flex-1 bg-glass-bg border border-glass-border rounded-md px-3 py-2 text-xs outline-none focus:border-primary-500/40"
+                      className="flex-1 bg-glass-bg border border-glass-border rounded-md px-3 py-2 text-xs outline-none focus:border-primary/40"
                     />
                     <input
                       type="file"
@@ -512,10 +512,10 @@ export default function Home() {
                         videoInputRef.current?.click();
                       }}
                       disabled={isUploadingVideo || videoFiles.length >= 3}
-                      className="w-9 h-9 bg-primary-500/10 border border-primary-500/20 text-primary-500 rounded-md flex items-center justify-center hover:bg-primary-500 hover:text-white transition-colors"
+                      className="w-9 h-9 bg-primary/10 border border-primary/20 text-primary rounded-md flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
                     >
                       {isUploadingVideo ? (
-                        <div className="w-4 h-4 border-2 border-primary-500 border-t-transparent rounded-full animate-spin" />
+                        <div className="w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin" />
                       ) : (
                         <FaVideo />
                       )}
@@ -528,7 +528,7 @@ export default function Home() {
                         }
                       }}
                       disabled={!newVideoUrl || videoFiles.length >= 3}
-                      className="w-9 h-9 bg-glass-bg border border-glass-border text-primary-500 rounded-md flex items-center justify-center hover:bg-primary-500 hover:text-white transition-colors"
+                      className="w-9 h-9 bg-glass-bg border border-glass-border text-primary rounded-md flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
                     >
                       <FaPlus />
                     </button>
@@ -572,7 +572,7 @@ export default function Home() {
                       value={newAudioUrl}
                       onChange={(e) => setNewAudioUrl(e.target.value)}
                       placeholder="Audio URL..."
-                      className="flex-1 bg-glass-bg border border-glass-border rounded-md px-3 py-2 text-xs outline-none focus:border-primary-500/40"
+                      className="flex-1 bg-glass-bg border border-glass-border rounded-md px-3 py-2 text-xs outline-none focus:border-primary/40"
                     />
                     <input
                       type="file"
@@ -590,10 +590,10 @@ export default function Home() {
                         audioInputRef.current?.click();
                       }}
                       disabled={isUploadingAudio || audioFiles.length >= 3}
-                      className="w-9 h-9 bg-primary-500/10 border border-primary-500/20 text-primary-500 rounded-md flex items-center justify-center hover:bg-primary-500 hover:text-white transition-colors"
+                      className="w-9 h-9 bg-primary/10 border border-primary/20 text-primary rounded-md flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
                     >
                       {isUploadingAudio ? (
-                        <div className="w-4 h-4 border-2 border-primary-500 border-t-transparent rounded-full animate-spin" />
+                        <div className="w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin" />
                       ) : (
                         <FaMusic />
                       )}
@@ -606,7 +606,7 @@ export default function Home() {
                         }
                       }}
                       disabled={!newAudioUrl || audioFiles.length >= 3}
-                      className="w-9 h-9 bg-glass-bg border border-glass-border text-primary-500 rounded-md flex items-center justify-center hover:bg-primary-500 hover:text-white transition-colors"
+                      className="w-9 h-9 bg-glass-bg border border-glass-border text-primary rounded-md flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
                     >
                       <FaPlus />
                     </button>
@@ -623,7 +623,7 @@ export default function Home() {
                             <span className="text-[10px] text-foreground truncate">
                               {url.split("/").pop()}
                             </span>
-                            <span className="text-[8px] text-primary-500 font-bold">
+                            <span className="text-[8px] text-primary font-bold">
                               @audio{idx + 1}
                             </span>
                           </div>
@@ -680,7 +680,7 @@ export default function Home() {
               (mode === "text-to-video" && !prompt.trim()) ||
               (mode !== "text-to-video" && imagesList.length === 0)
             }
-            className="w-full bg-primary-500 text-white rounded-md py-2 text-sm font-medium hover:bg-primary-600 active:scale-[0.98] transition-all disabled:opacity-60"
+            className="w-full bg-primary text-white rounded-md py-2 text-sm font-medium hover:bg-primary-hover active:scale-[0.98] transition-all disabled:opacity-60"
           >
             {loading ? (
               <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin mx-auto" />
@@ -726,7 +726,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex gap-2">
-                  <span className="px-2 py-1 bg-primary-500/10 text-primary-500 text-[10px] font-medium rounded uppercase">
+                  <span className="px-2 py-1 bg-primary/10 text-primary text-[10px] font-medium rounded uppercase">
                     {aspectRatio}
                   </span>
                   <span className="px-2 py-1 bg-glass-hover text-muted text-[10px] font-medium rounded uppercase">
@@ -736,7 +736,7 @@ export default function Home() {
               </div>
             ) : loading ? (
               <div className="flex flex-col items-center gap-4">
-                <div className="w-10 h-10 border-2 border-primary-500/20 border-t-primary-500 rounded-full animate-spin" />
+                <div className="w-10 h-10 border-2 border-primary/20 border-t-primary rounded-full animate-spin" />
                 <p className="text-[10px] font-medium text-muted uppercase tracking-widest animate-pulse">
                   {statusMessage}
                 </p>
