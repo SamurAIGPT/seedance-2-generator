@@ -10,6 +10,8 @@
 
 > 🎨 **[Explore 50+ more open-source AI apps →](https://github.com/Anil-matcha/awesome-generative-ai-apps)**
 
+https://github.com/user-attachments/assets/e3ec6cd7-2a62-4971-9e97-9906aca68265
+
 ## Related Projects
 
 - [Seedance-2-API](https://github.com/Anil-matcha/Seedance-2-API) — Python wrapper for Seedance 2.0 and Seedance 2 Mini — use the models directly in scripts
