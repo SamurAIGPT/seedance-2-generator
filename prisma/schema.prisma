@@ -56,6 +56,7 @@ model Creation {
   userId      String
   error       String?
   requestId   String?  @unique
+  webhookTokenHash String? @unique
   status      String   @default("processing")
   duration    Int?
   quality     String?

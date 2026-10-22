@@ -1,6 +1,7 @@
 import config from "@/lib/config";
 import { UserService } from "./user";
 import { prisma } from "@/lib/prisma";
+import { buildMuapiWebhookUrl, createMuapiWebhookToken, hashMuapiWebhookToken } from "./muapi-webhook";
 
 /**
  * Service to manage AI generations and interactions.
@@ -55,7 +56,26 @@ export const AIService = {
 
     if (!endpoint) throw new Error(`Endpoint not found for mode: ${mode} and resolution: ${resolution}`);
 
-    const webhookUrl = `${config.auth.webhook_url}/api/webhook/muapi`;
+    const creationModel = prisma.creation || prisma.Creation;
+    if (!creationModel) throw new Error("Creation model is not available");
+    const webhookToken = createMuapiWebhookToken();
+    const creation = await creationModel.create({
+      data: {
+        userId,
+        prompt,
+        aspectRatio: aspect_ratio,
+        resolution,
+        duration: parseInt(duration),
+        quality,
+        videoFiles: video_files,
+        audioFiles: audio_files,
+        inputImages: images_list && images_list.length > 0 ? JSON.stringify(images_list) : null,
+        status: "processing",
+        webhookTokenHash: hashMuapiWebhookToken(webhookToken),
+      }
+    });
+
+    const webhookUrl = buildMuapiWebhookUrl(config.auth.webhook_url, webhookToken);
     const submitUrl = `${endpoint}?webhook=${encodeURIComponent(webhookUrl)}`;
 
     const payload = {
@@ -74,6 +94,7 @@ export const AIService = {
       payload.audio_files = audio_files.slice(0, 3);
     }
 
+    let submissionRejected = false;
     try {
       const submitRes = await fetch(submitUrl, {
         method: "POST",
@@ -85,6 +106,7 @@ export const AIService = {
       });
 
       if (!submitRes.ok) {
+        submissionRejected = true;
         const errorText = await submitRes.text();
         throw new Error(`API Submission Failed: ${submitRes.status} ${errorText}`);
       }
@@ -92,29 +114,20 @@ export const AIService = {
       const { request_id } = await submitRes.json();
       if (!request_id) throw new Error("No request_id received from API");
 
-      const creationModel = prisma.creation || prisma.Creation;
-      if (creationModel) {
-        await creationModel.create({
-          data: {
-            userId,
-            prompt,
-            aspectRatio: aspect_ratio,
-            resolution,
-            duration: parseInt(duration),
-            quality,
-            videoFiles: video_files,
-            audioFiles: audio_files,
-            inputImages: images_list && images_list.length > 0 ? JSON.stringify(images_list) : null,
-            requestId: request_id,
-            status: "processing",
-          }
-        });
-      }
+      await creationModel.update({
+        where: { id: creation.id },
+        data: { requestId: request_id }
+      });
 
       return { request_id };
     } catch (err) {
-      if (!isUsingCustomKey && cost > 0) {
-        await UserService.addCredits(userId, cost);
+      if (submissionRejected) {
+        const removed = await creationModel.deleteMany({
+          where: { id: creation.id, status: "processing", requestId: null },
+        });
+        if (removed.count === 1 && !isUsingCustomKey && cost > 0) {
+          await UserService.addCredits(userId, cost);
+        }
       }
       throw err;
     }
